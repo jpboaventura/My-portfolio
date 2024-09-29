@@ -10,6 +10,26 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* Darken the Milky Way background */
+			#top {
+				position: relative;
+			}
+			#top::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba(0, 0, 0, 0.5); /* Adjust this for desired darkness */
+				z-index: 1;
+			}
+			#top .container {
+				position: relative;
+				z-index: 2; /* Bring text above the overlay */
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -18,13 +38,19 @@
 
 				<div class="top">
 
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-							<h1 id="title">Joao Pedro Boaventura</h1>
-							<p>Aerospace Engineer | Vehicle Simulation Laboratory | UTAT Rocketry</p>
-						</div>
-
+					
+                     <!-- Logo -->
+                    <div id="logo">
+                        <div style="display: flex; align-items: center; justify-content: flex-start;">
+                            <span class="image avatar48" style="margin-right: 10px; background-color: transparent;">
+                                <img src="assets/linkedin.jpg" alt="Joao Pedro Boaventura" style="border-radius: 50%; width: 48px; height: 48px;" />
+                            </span>
+                        <div style="display: inline-block;">
+                                <h1 id="title" style="margin: 0; font-size: 1.2em;">Joao Pedro Boaventura</h1>
+                                <p style="margin: 0; font-size: 0.9em;">Aerospace Engineer | University of Toronto</p>
+                        </div>
+                    </div>
+                </div>
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
@@ -52,38 +78,42 @@
 		<!-- Main -->
 			<div id="main">
 
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
+				<!-- Intro with Darkened Milky Way Background -->
+					<section id="top" class="one dark cover" style="background-image: url('assets/milkyway.jpg'); background-size: cover;">
 						<div class="container">
+
 							<header>
-								<h2 class="alt">Hi! I'm <strong>Joao Pedro Boaventura</strong>, an Aerospace Engineering student specializing in UAV design and liquid rocket systems.</h2>
-								<p>Welcome to my portfolio. Here you can explore my work on various aerospace projects, including my role in designing UAV test facilities and hybrid rocket systems.</p>
+								<h2 class="alt">Welcome! I'm <strong>Joao Pedro Boaventura</strong>,</h2>
+								<p>I’m an Aerospace Engineering student with a passion for mechanical design, UAV systems, and liquid rocket propulsion. With hands-on experience in 3D CAD, prototyping, and system integration, I am committed to bringing innovative aerospace solutions to life. Browse my portfolio to explore my work on UAV design, hybrid rockets, and more!</p>
 							</header>
+
 							<footer>
-								<a href="#portfolio" class="button scrolly">View My Work</a>
+								<a href="#portfolio" class="button scrolly">View My Projects</a>
 							</footer>
+
 						</div>
 					</section>
 
 				<!-- About Me -->
 					<section id="about" class="three">
 						<div class="container">
+
 							<header>
 								<h2>About Me</h2>
 							</header>
-							<a href="#" class="image featured"><img src="images/about.jpg" alt="Joao Pedro Boaventura" /></a>
+
 							<p>I am an aerospace engineering student with hands-on experience in designing UAV systems, hybrid rocket engines, and system integration. My passion for rocketry and flight systems has driven me to work on several high-profile projects, including leading the development of a UAV test facility and the design of a cold flow adapter for liquid rocket engines.</p>
+
 						</div>
 					</section>
 
 				<!-- Portfolio -->
 					<section id="portfolio" class="two">
 						<div class="container">
+
 							<header>
 								<h2>Portfolio</h2>
 							</header>
-
-							<p>Here are some of the key projects I have worked on during my engineering studies, focusing on UAV design, hybrid rockets, and system integration.</p>
 
 							<!-- Embed PowerPoint Presentation from OneDrive -->
 							<div style="text-align: center;">
@@ -98,10 +128,13 @@
 				<!-- Contact -->
 					<section id="contact" class="four">
 						<div class="container">
+
 							<header>
 								<h2>Contact</h2>
 							</header>
+
 							<p>If you'd like to connect or learn more about my work, feel free to reach out via email or through my GitHub profile.</p>
+
 							<form method="post" action="#">
 								<div class="row">
 									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
@@ -114,6 +147,7 @@
 									</div>
 								</div>
 							</form>
+
 						</div>
 					</section>
 
