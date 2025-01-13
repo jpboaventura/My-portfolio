@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Disconnect for Liquid Rocket</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: white; /* Matches the page background */
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #0073b1;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #e6f7ff;
+        }
+
+        /* Title Section */
+        .title-section {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .title-section h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .title-section p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Divider Line */
+        .divider {
+            height: 1px;
+            background-color: #ddd;
+            margin: 1rem 0;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 50%;
+            margin: 0 auto;
+            overflow: hidden;
+            background-color: white; /* Matches the page background */
+            height: 500px; /* Maintain a fixed height */
+            box-shadow: none; /* Remove the shadow effect */
+            border-radius: 0; /* Remove rounded corners */
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensure images fit without cropping */
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .arrow {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 2rem;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 20;
+        }
+
+        .left-arrow {
+            position: absolute;
+            left: 10px;
+        }
+
+        .right-arrow {
+            position: absolute;
+            right: 10px;
+        }
+
+        .indicators {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background-color: #0073b1;
+        }
+
+        .content-text {
+            text-align: left;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .content-text h2 {
+            margin-bottom: 1rem;
+        }
+
+        .content-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">Joao Pedro Boaventura</div>
+        <a href="index.html">Home</a>
+    </div>
+
+    <!-- Title Section -->
+    <div class="title-section">
+        <h1>Quick Disconnect for Liquid Rocket</h1>
+        <p>Apr 2024 - Present | University of Toronto – UTAT Rocketry Division</p>
+    </div>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <!-- Carousel Section -->
+        <div class="carousel">
+            <img src="assets/QD/QDCAD_holding.jpg" class="active" alt="QD CAD Holding">
+            <img src="assets/QD/TestSetup.jpg" alt="Test Setup">
+            <img src="assets/QD/Wall.jpg" alt="Wall Mount">
+
+            <div class="carousel-controls">
+                <button class="arrow left-arrow">&lt;</button>
+                <button class="arrow right-arrow">&gt;</button>
+            </div>
+
+            <div class="indicators">
+                <div class="indicator active" data-index="0"></div>
+                <div class="indicator" data-index="1"></div>
+                <div class="indicator" data-index="2"></div>
+            </div>
+        </div>
+
+        <div class="content-text">
+            <h2>Project Description</h2>
+            <p>
+                This project involves designing a new Quick Disconnect (QD) system for a liquid rocket, essential for safely starting the engine. The goal is to develop a system that improves safety and optimizes disconnection force. The project covers all aspects of design, testing, and iteration, with the use of CAD for modeling and 3D printing for initial prototypes.
+            </p>
+
+            <h2>Role</h2>
+            <p>
+                As co-lead of the structures subsystem, I researched potential designs like breakaway couplings and worked with the team to select an appropriate QD. I helped design test components to measure disconnection force and improve the secure mechanism. Moving forward, I will focus on refining the actuation mechanism and testing the system to meet the project’s safety and performance goals.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.carousel img');
+        const indicators = document.querySelectorAll('.indicator');
+        const leftArrow = document.querySelector('.left-arrow');
+        const rightArrow = document.querySelector('.right-arrow');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+                indicators[i].classList.toggle('active', i === index);
+            });
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        indicators.forEach((indicator, i) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = i;
+                showImage(currentIndex);
+            });
+        });
+
+        leftArrow.addEventListener('click', prevImage);
+        rightArrow.addEventListener('click', nextImage);
+
+        setInterval(nextImage, 10000); // Automatically change image every 10 seconds
+    </script>
+</body>
+</html>

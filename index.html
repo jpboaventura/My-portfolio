@@ -1,147 +1,196 @@
-<!DOCTYPE HTML>
-<!--
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Joao Pedro Boaventura's Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
-			/* Darken the Milky Way background */
-			#top {
-				position: relative;
-			}
-			#top::before {
-				content: "";
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				background: rgba(0, 0, 0, 0.5); /* Adjust this for desired darkness */
-				z-index: 1;
-			}
-			#top .container {
-				position: relative;
-				z-index: 2; /* Bring text above the overlay */
-			}
-		</style>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joao Pedro Boaventura | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Parallax Cover Section -->
+    <div class="parallax">
+        <div class="parallax-content">
+            <div class="parallax-text">
+                <h1>Joao Pedro Boaventura</h1>
+                <div class="social-container">
+                    <p>MY PORTFOLIO</p>
+                    <a href="https://www.linkedin.com/in/joao-boaventura/" target="_blank">
+                        <img src="assets/link_logo.png" alt="LinkedIn Logo">
+                    </a>
+                </div>
+            </div>
+            <div class="parallax-photo">
+                <img src="assets/linkedin.jpg" alt="Joao Pedro Boaventura">
+            </div>
+        </div>
+    </div>
 
-		<!-- Header -->
-			<div id="header">
+    <!-- Main Content -->
+    <div class="content">
+        <section id="about">
+            <div class="about-me">
+                <div class="about-me-text">
+                    <h2>ABOUT ME</h2>
+                    <p>
+                        I am an aerospace engineering student at the University of Toronto with hands-on mechanical design  and manufacturing experience. 
+                        My passion for aerospace has driven me to work on several projects, including the development of a UAV test facility and Defiance Mk. IV, UTAT's hybrid roket.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-				<div class="top">
-
-					
-                     <!-- Logo -->
-                    <div id="logo">
-                        <div style="display: flex; align-items: center; justify-content: flex-start;">
-                            <span class="image avatar48" style="margin-right: 10px; background-color: transparent;">
-                                <img src="assets/linkedin.jpg" alt="Joao Pedro Boaventura" style="border-radius: 50%; width: 48px; height: 48px;" />
-                            </span>
-                        <div style="display: inline-block;">
-                                <h1 id="title" style="margin: 0; font-size: 1.2em;">Joao Pedro Boaventura</h1>
-                                <p style="margin: 0; font-size: 0.9em;">Aerospace Engineer | University of Toronto</p>
-                        </div>
+        <section id="portfolio">
+            <h2>PORTFOLIO</h2>
+            <!-- <p>Here are some of my notable projects:</p> -->
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item">
+                    <img src="assets/XFLR - Flight test.png" alt="UAV Flight Test Facility">
+                    <div class="portfolio-overlay">
+                        <h3>UAV Flight Test Facility</h3>
+                        <a href="TestFacility.html" class="learn-more">Learn More</a>
                     </div>
                 </div>
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
-								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
-								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
-							</ul>
-						</nav>
+                <!-- Project 3 -->
+                <div class="portfolio-item">
+                    <img src="assets/ColdFlow.jpg" alt="Cold Flow Adapter">
+                    <div class="portfolio-overlay">
+                        <h3>Liquid Rocket Quick Disconnect</h3>
+                        <a href="quickdisconnect.html" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="portfolio-item">
+                    <img src="assets/EFIS display.png" alt="EFIS Display Project">
+                    <div class="portfolio-overlay">
+                        <h3>EFIS Display Development</h3>
+                        <a href="efisproject.html" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="portfolio-item">
+                    <img src="assets/ColdFlow.jpg" alt="Cold Flow Adapter">
+                    <div class="portfolio-overlay">
+                        <h3>Cold Flow Adapter</h3>
+                        <a href="coldflowproject.html" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="portfolio-item">
+                    <img src="assets/LaunchRail.jpg" alt="Rocket Launch Rail">
+                    <div class="portfolio-overlay">
+                        <h3>Rocket Launch Rail</h3>
+                        <a href="launchrailproject.html" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="portfolio-item">
+                    <img src="assets/PraxisIII.jpg" alt="Praxis III Trash Bin">
+                    <div class="portfolio-overlay">
+                        <h3>Praxis III Trash Bin</h3>
+                        <a href="praxisiiiproject.html" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="portfolio-item">
+                    <img src="assets/PraxisII.jpg" alt="Praxis II Curling Aid">
+                    <div class="portfolio-overlay">
+                        <h3>Praxis II Curling Aid</h3>
+                        <a href="praxisiiproject.html" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <!-- Project 7 -->
+                <div class="portfolio-item">
+                    <img src="assets/CIV102.jpg" alt="CIV102 Bridge Design">
+                    <div class="portfolio-overlay">
+                        <h3>CIV102 Bridge Design</h3>
+                        <a href="civ102project.html" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <!-- Project 8 -->
+                <div class="portfolio-item">
+                    <img src="assets/PneumaticPiston.jpg" alt="Pneumatic Piston">
+                    <div class="portfolio-overlay">
+                        <h3>Pneumatic Piston</h3>
+                        <a href="pneumaticpistonproject.html" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <!-- Project 9 -->
+                <div class="portfolio-item">
+                    <img src="assets/HighPowerRocket.jpg" alt="High-Power Rocket">
+                    <div class="portfolio-overlay">
+                        <h3>High-Power Rocket</h3>
+                        <a href="highpowerrocketproject.html" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <!-- Project 10 -->
+                <div class="portfolio-item">
+                    <img src="assets/LinerDesign.jpg" alt="Combustion Chamber Liner">
+                    <div class="portfolio-overlay">
+                        <h3>Combustion Chamber Liner Manufacturing</h3>
+                        <a href="linerdesignproject.html" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-				</div>
-
-				<div class="bottom">
-
-					<!-- Social Icons -->
-						<ul class="icons">
-							<li><a href="https://github.com/your-username" class="icon brands fa-github"><span class="label">Github</span></a></li>
-							<li><a href="mailto:youremail@example.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-
-				</div>
-
-			</div>
-
-		<!-- Main -->
-			<div id="main">
-
-				<!-- Intro with Darkened Milky Way Background -->
-					<section id="top" class="one dark cover" style="background-image: url('assets/milkyway.jpg'); background-size: cover;">
-						<div class="container">
-
-							<header>
-								<h2 class="alt">Welcome! I'm <strong>Joao Pedro Boaventura</strong>,</h2>
-								<p>I’m an Aerospace Engineering student with a strong interest in mechanical design, rockets, and aerospace projects. I've gained hands-on experience with 3D CAD, prototyping, and system integration through various projects. Feel free to check out my portfolio to see my work on UAV design, hybrid rockets, and other areas I've explored.</p>
-							</header>
-
-							<footer>
-								<a href="#portfolio" class="button scrolly">View My Projects</a>
-							</footer>
-
-						</div>
-					</section>
-
-				<!-- About Me -->
-					<section id="about" class="three">
-						<div class="container">
-
-							<header>
-								<h2>About Me</h2>
-							</header>
-
-							<p>I am an aerospace engineering student with hands-on experience in designing UAV systems, hybrid rocket engines, and system integration. My passion for rocketry and flight systems has driven me to work on several high-profile projects, including leading the development of a UAV test facility and the design of a cold flow adapter for liquid rocket engines.</p>
-
-						</div>
-					</section>
-
-				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
-
-							<header>
-								<h2>Portfolio</h2>
-							</header>
-
-							
-							<div style="text-align: center;">
-								<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSYtnfAHqjbm-Hk4Qfb55lRSf53rWBtzcnHyqBTuPrA7P9A2KT_ZGxo2q55Wq-s4j3VNSzcBCh8YPGc/embed?start=true&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>								</iframe>
-							</div>
-
-						</div>
-					</section>
-
-				
-
-			</div>
-
-		<!-- Footer -->
-			<div id="footer">
-				<ul class="copyright">
-					<li>&copy; Joao Pedro Boaventura. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <!-- Technical Skills Section -->
+    <section id="technical-skills">
+        <h2>TECHNICAL SKILLS</h2>
+        <div class="carousel-container">
+            <button class="carousel-button prev" onclick="moveCarousel(-1)">&#8249;</button>
+            <div class="carousel">
+                <a href="https://www.mathworks.com/" target="_blank">
+                    <img src="assets/matlab.png" alt="MATLAB">
+                </a>
+                <a href="https://workspace.google.com/" target="_blank">
+                    <img src="assets/google_suite.png" alt="Google Suite">
+                </a>
+                <a href="https://www.microsoft.com/en-us/microsoft-365" target="_blank">
+                    <img src="assets/office.png" alt="Microsoft Office">
+                </a>
+                <a href="https://www.onshape.com/" target="_blank">
+                    <img src="assets/onshape.png" alt="Onshape">
+                </a>
+                <a href="https://www.solidworks.com/" target="_blank">
+                    <img src="assets/solidworks.png" alt="SolidWorks">
+                </a>
+                <a href="https://www.qt.io/" target="_blank">
+                    <img src="assets/qt_creator.png" alt="Qt Creator">
+                </a>
+            </div>
+            <button class="carousel-button next" onclick="moveCarousel(1)">&#8250;</button>
+        </div>
+    </section>
+</body>
 </html>
+
+<section id="thank-you">
+    <div class="thank-you-container">
+        <div class="thank-you-message">
+            <h1>THANK YOU!</h1>
+            <p>
+                Thank you for taking the time to visit my page!
+            </p>
+            <p>
+                Contact me via my socials or the email listed here for any questions.
+            </p>
+        </div>
+        <div class="contact-info">
+            <h2>CONTACT ME</h2>
+            <ul>
+                <li>joao.boaventura@mail.utoronto.ca</li>
+            
+                <li>University of Toronto</li>
+                <li>Greater Toronto Area, Canada</li>
+            </ul>
+        </div>
+        <div class="thank-you-name">
+            <h1>JOAO BOAVENTURA</h1>
+        </div>
+    </div>
+</section>

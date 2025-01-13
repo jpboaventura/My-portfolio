@@ -1,0 +1,446 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background: linear-gradient(180deg, navy 0%, #3a73ab 50%, white 100%);
+    background-attachment: fixed;
+    background-size: 100% 200%;
+    transition: color 0.5s ease;
+    color: white; /* Start with white text for readability */
+}
+
+/* Adding Oswald Font for Headings */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+/* Parallax Section */
+.parallax {
+    position: relative;
+    height: 70vh; /* Adjusted height */
+    background: white; /* Changed background to white */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    color: navy; /* Changed text color to navy blue */
+}
+
+/* Remove the dark overlay */
+.parallax::before {
+    display: none; /* Removed the dark overlay for better readability on white */
+}
+
+.parallax-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.parallax-text {
+    max-width: 50%;
+    position: relative;
+}
+
+.parallax-text h1 {
+    font-size: 3.5rem; /* Slightly increased font size */
+    margin-bottom: 1rem;
+    color: navy; /* Changed color to navy blue */
+    font-weight: bold; /* Emphasized the text */
+}
+
+.parallax-text p {
+    font-size: 1.5rem; /* Increased font size for better readability */
+    margin-bottom: 0.5rem;
+    color: navy; /* Changed color to navy blue */
+}
+
+.social-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between text and icon */
+}
+
+.social-container img {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.parallax-photo img {
+    height: 80%;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+/* Main Content Section */
+.content {
+    padding: 4rem 2rem;
+}
+
+.content h2 {
+    margin-bottom: 1rem;
+    color: black; /* Ensure readability on white */
+}
+.content p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.content section {
+    margin-bottom: 4rem;
+}
+
+/* About Me Section */
+#about {
+    padding: 4rem 2rem;
+    background: transparent; /* Allow the gradient from the body */
+    color: white;
+}
+
+.about-me {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white; /* White box for the "About Me" section */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: black; /* Ensure readability inside the white box */
+}
+
+.about-me h2 {
+    font-size: 2.5rem; /* Larger font size for the title */
+    font-weight: bold; /* Keep the title bold for emphasis */
+}
+
+.about-me p {
+    font-size: 1.2rem; /* Larger font size for the paragraph */
+    line-height: 1.8; /* Adds better spacing between lines for readability */
+}
+
+/* Portfolio Section */
+#portfolio {
+    padding: 4rem 2rem;
+    background: transparent; /* Allow the gradient from the body */
+    color: black; /* Ensure text contrast */
+    text-align: center;
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+/* Portfolio Item */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    width: auto; /* Ensures width adapts to the content */
+    height: 250px; /* Adjust this to control the height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%; /* Ensure the image fills the container */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio and covers the area */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Portfolio Overlay */
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    height: 100%; /* Matches the size of the image */
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+/* Project Title */
+.portfolio-overlay h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Learn More Button */
+.portfolio-overlay .learn-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background: white;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.portfolio-overlay .learn-more:hover {
+    background: black;
+    color: white;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #0073b1;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #e6f7ff;
+}
+
+/* Title Section */
+.title-section {
+    text-align: center;
+    padding: 2rem;
+}
+
+.title-section h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.title-section p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* New Headings Style for Oswald Font */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: inherit;
+}
+
+h1 {
+    font-size: 4rem; /* Adjust to match Liam's title size */
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 0.8rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.7rem;
+}
+
+/* Divider Line */
+.divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 1rem 0;
+}
+
+/* Technical Skills Section */
+#technical-skills {
+    padding: 4rem 2rem;
+    background: transparent; /* Allow the gradient from the body */
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center; /* Centers images horizontally */
+    align-items: center; /* Aligns images vertically */
+    gap: 20px; /* Adds consistent spacing between images */
+}
+
+.carousel img {
+    width: 150px; /* Set the desired width */
+    height: 150px; /* Set the desired height */
+    object-fit: contain; /* Ensures the image scales proportionally */
+    border: none; /* Removes any default border */
+    box-shadow: none; /* Removes shadow */
+    margin: 0 10px; /* Add some space between images */
+    background: transparent; /* Ensures no background color is visible */
+}
+
+.carousel img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.carousel a {
+    text-decoration: none;
+}
+
+.carousel-button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    color: #333;
+    z-index: 1;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+/* Written text styling (excluding titles) */
+body, p, span, li {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* Regular weight for body text */
+    line-height: 1.8; /* Improves readability */
+    color: inherit; /* Use existing text color */
+}
+
+/* Optional: Specific font weight for highlighted or emphasized text */
+strong, b {
+    font-weight: 500; /* Slightly bolder weight for emphasis */
+}
+
+/* Thank You Section */
+#thank-you {
+    padding: 4rem 2rem;
+    background: #f8f9fa; /* Light background color */
+    border-top: 2px solid #ddd; /* Top separator line */
+}
+
+.thank-you-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+    text-align: center; /* For smaller screens */
+}
+
+.thank-you-message {
+    flex: 1;
+    max-width: 400px;
+}
+
+.thank-you-message h1 {
+    font-size: 2.5rem;
+    color: #003366; /* Navy blue */
+    margin-bottom: 1rem;
+}
+
+.thank-you-message p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.contact-info {
+    flex: 1;
+    max-width: 400px;
+}
+
+.contact-info h2 {
+    font-size: 1.8rem;
+    color: #003366; /* Navy blue */
+    margin-bottom: 1rem;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.contact-info img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.contact-info a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.thank-you-name {
+    flex: 1;
+    max-width: 400px;
+}
+
+.thank-you-name h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #003366; /* Navy blue */
+}

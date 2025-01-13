@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design of UAV Flight Test Facility</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: white;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #0073b1;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #e6f7ff;
+        }
+
+        /* Title Section */
+        .title-section {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .title-section h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .title-section p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Divider Line */
+        .divider {
+            height: 1px;
+            background-color: #ddd;
+            margin: 1rem 0;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 50%;
+            margin: 0 auto;
+            overflow: hidden;
+            background-color: white;
+            height: 500px;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .arrow {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 2rem;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .left-arrow {
+            position: absolute;
+            left: 10px;
+        }
+
+        .right-arrow {
+            position: absolute;
+            right: 10px;
+        }
+
+        .indicators {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background-color: #0073b1;
+        }
+
+        .content-text {
+            text-align: left;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .content-text h2 {
+            margin-bottom: 1rem;
+        }
+
+        .content-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">Joao Pedro Boaventura</div>
+        <a href="index.html">Home</a>
+    </div>
+
+    <!-- Title Section -->
+    <div class="title-section">
+        <h1>Design of UAV Flight Test Facility for Flight Path Reconstruction</h1>
+        <p>May - Jul 2024 | Prof. Peter R. Grant Vehicle Simulation Laboratory</p>
+    </div>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <!-- Carousel Section -->
+        <div class="carousel">
+            <img src="assets/FPR/xflr.jpg" class="active" alt="XFLR Analysis">
+            <img src="assets/FPR/vsp.jpg" alt="VSP Aero Analysis">
+
+            <div class="carousel-controls">
+                <button class="arrow left-arrow">&lt;</button>
+                <button class="arrow right-arrow">&gt;</button>
+            </div>
+
+            <div class="indicators">
+                <div class="indicator active" data-index="0"></div>
+                <div class="indicator" data-index="1"></div>
+            </div>
+        </div>
+
+        <div class="content-text">
+            <h2>Description</h2>
+            <p>
+                The project is aimed at developing a flight test facility for a small UAV that could be flown indoors in a large building where the wind conditions are known to get ground truth data for Flight Path Reconstruction. The project involved the design of an aircraft, the selection and/or design of sensors, and testing the equipment.
+            </p>
+
+            <h2>Role</h2>
+            <p>
+                As a summer research undergraduate student, I was responsible for finding the most optimal trip conditions so that the UAV would behave analogous to a real aircraft. I used XFLR5 software to compare the plots CL vs Cd, CL vs Alpha, Cm vs Alpha, and CL vs Xtr top of a normal aircraft and a UAV. Analysis with multiple trip conditions for the UAV was made. I used VSPAero software to analyze properties such as CL of the selected airfoil throughout the span. I also used Excel spreadsheets to compare the most promising trip conditions to find the one that should be induced for when the UAV is built. I selected sensors to acquire required data such as accelerometers, pitot tubes, gyroscopes, GPS, magnetometers, and barometers.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.carousel img');
+        const indicators = document.querySelectorAll('.indicator');
+        const leftArrow = document.querySelector('.left-arrow');
+        const rightArrow = document.querySelector('.right-arrow');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+                indicators[i].classList.toggle('active', i === index);
+            });
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        indicators.forEach((indicator, i) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = i;
+                showImage(currentIndex);
+            });
+        });
+
+        leftArrow.addEventListener('click', prevImage);
+        rightArrow.addEventListener('click', nextImage);
+
+        setInterval(nextImage, 10000); // Automatically change image every 10 seconds
+    </script>
+</body>
+</html>
