@@ -14,3 +14,4 @@ window.addEventListener("scroll", () => {
         document.body.classList.remove("light-mode"); // Switch back to white text
     }
 });
+

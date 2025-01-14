@@ -395,43 +395,38 @@ strong, b {
 }
 
 .contact-info {
-    flex: 1;
-    max-width: 400px;
+    text-align: center; /* Centers the content */
 }
 
 .contact-info h2 {
-    font-size: 1.8rem;
-    color: #003366; /* Navy blue */
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: navy; /* Match the "Thank You" heading */
 }
 
 .contact-info ul {
-    list-style: none;
+    margin: 0;
     padding: 0;
+    list-style-type: none;
+    font-size: 1rem;
+    line-height: 1.8;
 }
 
 .contact-info li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.contact-info img {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
+    margin-bottom: 10px;
+    color: #333; /* Ensure readability */
 }
 
 .contact-info a {
-    color: #003366;
     text-decoration: none;
+    color: #003366;
     font-weight: bold;
 }
 
 .contact-info a:hover {
     text-decoration: underline;
+    color: #0056b3;
 }
 
 .thank-you-name {
@@ -443,4 +438,24 @@ strong, b {
     font-size: 3rem;
     font-weight: bold;
     color: #003366; /* Navy blue */
+}
+
+/* Continuous Scrolling */
+@keyframes scroll-carousel {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.carousel.scroll-enabled {
+    animation: scroll-carousel 20s linear infinite;
+    display: flex;
+    will-change: transform; /* Optimizes rendering */
+}
+
+.carousel.pause-scroll {
+    animation-play-state: paused; /* Pauses scrolling */
 }
